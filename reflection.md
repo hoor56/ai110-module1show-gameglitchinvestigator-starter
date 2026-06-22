@@ -5,17 +5,21 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+The first time I ran the app, the UI loaded properly, but the gameplay felt unresponsive and completely out of sync. I noticed I sometimes had to click "Submit Guess" twice just to see the output update. On top of the laggy UI, the game gave mathematically incorrect hints and had completely broken win/loss states that made it impossible to play multiple rounds.
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+  Wrong Hints: When the secret number was 88 and I guessed 80, the hint told me to "GO LOWER" instead of higher. The hints seem stuck or completely inverted on certain turns.
+Laggy UI: The Attempts Left text doesn;t match the actual game state. It says I have 1 attempt left, but then immediately hits "Out of attempts". I also have to click Submit twice to see an update.
+Broken New Game Button: When the game ends, clicking New Game updates the attampts to 8, but the game is still stuck in a Game Over state and won't actually let me play a new round.
 
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
+|---101--|-----invalid----  |---higher--------|------------------------|
+| new game|delete the input |did not delete the old input| |
+| 7 attempts for medium level |giving out of attempts message at 6th message | | |
 | | | | |
 
 ---

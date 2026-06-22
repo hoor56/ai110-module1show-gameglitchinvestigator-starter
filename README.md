@@ -1,5 +1,4 @@
 # 🎮 Game Glitch Investigator: The Impossible Guesser
-## Hiorya Barekzai
 ## 🚨 The Situation
 
 You asked an AI to build a simple "Number Guessing Game" using Streamlit.
