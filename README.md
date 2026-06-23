@@ -25,8 +25,19 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+It's a number-guessing game.The app picks a secret number within a range set by difficulty — Easy 1–20, Normal 1–100, Hard 1–50 — and the player tries to guess it within a limited number of attempts (Easy 6, Normal 8, Hard 5). After each guess the game gives a "go higher / go lower" hint, tracks a score, keeps a guess history, and ends on a win or when attempts run out.
+The exercise is to investigate the glitches, explain the underlying logic causing them, and fix them.
 - [ ] Detail which bugs you found.
+Out-of-range guesses were accepted.
+"New Game" didn't clear the input box.
+Players got fewer attempts than the sidebar advertised. 
 - [ ] Explain what fixes you applied.
+Range validation — in parse_guess(), after confirming the input is an integer, reject anything below low or above high and return a clear out-of-range error, so invalid numbers like 101 never reach check_guess().
+
+Clear input on New Game — in the New Game handler, also clear the guess_input_{difficulty} key from st.session_state (alongside the existing state resets) so the box empties when a new game starts.
+
+Count only valid attempts — move the st.session_state.attempts += 1 increment to after parse_guess() succeeds, so only legitimate, in-range guesses consume a turn and the player gets the full count shown in the sidebar.
+
 
 ## 📸 Demo Walkthrough
 
@@ -38,7 +49,7 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 4. <!-- Describe this step -->
 5. <!-- Add more steps as needed -->
 
-**Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+**Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->![alt text](<Screenshot 2026-06-22 200510.png>)
 
 ## 🧪 Test Results
 
