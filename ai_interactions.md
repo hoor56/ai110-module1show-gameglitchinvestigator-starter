@@ -8,19 +8,27 @@
 
 > Document your experience using an AI agent (e.g., Cursor Agent, Claude, Copilot) to make multi-step changes autonomously.
 
+**Agent used:** 
+Claude Code inside VS Code.
+
 **What task did you give the agent?**
 
-<!-- Describe the goal you asked the agent to accomplish -->
+I gave it the buggy AI-generated guessing game and asked it to investigate the glitches and explain the underlying logic causing each one, and fix all of the problems in
+the code. 
+Specifically, I reported three symptoms:
+1. In Normal difficulty, typing `101` told me to keep guessing instead of giving an
+   out-of-range error.
+2. Clicking **New Game** did not clear my previous guess out of the input box.
+3. I was getting fewer turns than the "Attempts allowed" number shown in the sidebar.
 
 **What did the agent do?**
 
-<!-- List the steps the agent took (files edited, commands run, etc.) -->
+- Read both files (`app.py` and `logic_utils.py`) and Diagnosed the root cause of each glitch and fixed the glitches. 
+ 
 
 **What did you have to verify or fix manually?**
 
-<!-- Describe anything the agent got wrong or that required human review -->
-
----
+- I just read the given code from AI and made sure it is understandle and clean. 
 
 ## Test Generation (SF7)
 
@@ -59,6 +67,7 @@
 ## Model Comparison (SF11)
 
 > Compare two AI models on the same task.
+only one model used 
 
 **Task given to both models:**
 
